@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المادة الرابعة والثلاثون | السعودية خط أحمر</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#070c18;--navy:#101827;--green:#16803C;--green2:#22c55e;--red:#d4262c;--ink:#f1f5f9;--mut:#94a3b8;--card:rgba(12,18,34,.92);--line:rgba(255,255,255,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,Tahoma,Arial,sans-serif;overflow:hidden}
+#map{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#0d1630 0%,#070c18 70%)}
+#map svg{display:block;cursor:grab;touch-action:none}
+.datamaps-subunit{vector-effect:non-scaling-stroke;transition:fill .2s}
+.datamaps-hoverover{z-index:5}
+.hoverinfo{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:10px;font:700 14px Tajawal,sans-serif;direction:rtl;text-align:center}
+.hoverinfo small{color:var(--green2)}
+header{position:absolute;top:0;left:0;right:0;padding:calc(env(safe-area-inset-top,0px) + 14px) 18px 40px;background:linear-gradient(#070c18 10%,transparent);pointer-events:none;z-index:3;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+header>*{pointer-events:auto}
+.tt{flex:1 1 300px;min-width:0}
+.tt small{display:block;color:var(--mut);font-weight:300;font-size:12px;letter-spacing:1px;margin-bottom:6px}
+.tt h1{margin:0;font-weight:300;font-size:clamp(22px,4.4vw,42px);line-height:1.35;color:#f4f7fb}
+.tt .l2{margin:2px 0 0;font-weight:300;font-size:clamp(14px,2.2vw,20px);line-height:1.6;color:#c3cddd}
+.tt .rule{width:56px;height:1px;background:var(--red);margin:9px 0 8px}
+.tt .l3{margin:0;font-weight:500;font-size:clamp(16px,2.6vw,24px);line-height:1.5}
+.tt .l3 i{font-style:normal;color:#16803C;filter:brightness(1.25)}
+.tt .l3 u{text-decoration:none;color:#e03a3f}
+.btn{font:400 14px Tajawal,sans-serif;border:1px solid var(--line);background:rgba(16,24,39,.5);color:var(--ink);padding:10px 16px;border-radius:12px;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .15s,border-color .15s,background .15s}
+.btn:hover{border-color:var(--green2);transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.main{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16);box-shadow:inset 0 -2px 0 rgba(22,128,60,.95);font-weight:300;font-size:15px}
+.btn.main:hover{background:rgba(255,255,255,.1)}
+.acts{display:flex;flex-direction:column;align-items:center;gap:8px;width:max-content;max-width:100%;padding:10px 16px 12px;background:rgba(255,255,255,.035);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.09);border-radius:16px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+@media(max-width:700px){.acts{margin:0 auto}}
+#back{display:none}
+.stat{color:var(--mut);font-size:13px;font-weight:300;padding:0 6px;text-align:center}
+.stat b{color:var(--green2);font-size:16px}
+#hint{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);right:50%;transform:translateX(50%);color:var(--mut);font-size:13px;background:rgba(7,12,24,.7);padding:6px 14px;border-radius:99px;z-index:2;white-space:nowrap}
+#chips{display:none;position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);left:12px;right:12px;gap:8px;overflow-x:auto;z-index:3;padding:6px 2px;scrollbar-width:none}
+#chips button{flex:none;font:700 13px Tajawal,sans-serif;background:rgba(16,24,39,.9);color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:8px 14px;cursor:pointer}
+#chips button:hover,#chips button.on{background:var(--green);border-color:var(--green2)}
+.m .dot{fill:var(--green2);stroke:#fff;stroke-width:2;cursor:pointer}
+.m .pulse{pointer-events:none;fill:rgba(34,197,94,.35);animation:p 2s infinite;transform-origin:0 0}
+@keyframes p{0%{transform:scale(.6);opacity:1}100%{transform:scale(3);opacity:0}}
+.c circle{fill:#f8d66d;stroke:#101827;stroke-width:1.5;cursor:pointer}
+.c text{fill:#fff;font:700 12px Tajawal,sans-serif;paint-order:stroke;stroke:#070c18;stroke-width:3px;pointer-events:none}
+.rg{fill:none;stroke:#8ff5b5;stroke-opacity:.4;stroke-width:.9px;vector-effect:non-scaling-stroke;pointer-events:none}
+.rn{fill:#e9fff1;font:500 14px Tajawal,sans-serif;text-anchor:middle;paint-order:stroke;stroke:#06240f;stroke-width:3.5px;pointer-events:none}
+.g circle{fill:#f8d66d;stroke:#101827;stroke-width:1.2}
+.g text{fill:#fff;font:500 11px Tajawal,sans-serif;paint-order:stroke;stroke:#070c18;stroke-width:3px;pointer-events:none}
+.geo{visibility:hidden}
+#card{display:none;position:fixed;z-index:6;width:min(300px,86vw);background:var(--card);border:1px solid #2ea35a;border-radius:16px;padding:16px 16px 14px;box-shadow:0 18px 50px rgba(0,0,0,.6);transform:translate(-50%,calc(-100% - 16px))}
+.msg{font-size:18px;line-height:1.7;font-weight:700;margin:0 0 10px;word-break:break-word}
+.msg:before{content:"«";color:var(--green2)}.msg:after{content:"»";color:var(--green2)}
+.who{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--mut)}
+.who b{color:var(--ink);font-size:15px}
+.x{position:absolute;top:6px;left:10px;background:none;border:0;color:var(--mut);font-size:22px;cursor:pointer}
+#ov{display:none;position:fixed;inset:0;z-index:10;background:rgba(3,6,14,.5);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);overflow-y:auto;overflow-x:hidden;padding:14px}
+.modal{width:100%;max-width:360px;margin:3vh auto;background:rgba(14,22,42,.5);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:16px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.modal h2{margin:0 0 4px;font-size:18px;font-weight:300}
+.modal p.s{margin:0 0 10px;color:var(--mut);font-size:13px;font-weight:300}
+label{display:block;font-weight:400;margin:8px 0 3px;font-size:12.5px;color:#d5deeb}
+input,textarea,select{-webkit-user-select:text;user-select:text;pointer-events:auto;width:100%;font:300 16px Tajawal,sans-serif;color:var(--ink);background:rgba(7,12,26,.55);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:7px 11px}
+input:focus,textarea:focus,select:focus{outline:1px solid rgba(34,197,94,.55);border-color:transparent}
+textarea{min-height:58px;resize:vertical}
+.err{color:#ff8a8a;font-size:13px;min-height:16px;margin-top:3px}
+.cnt{float:left;color:var(--mut);font-weight:400}
+#mini{width:100%;height:auto;aspect-ratio:16/10;background:#070c18;border:1px solid var(--line);border-radius:12px;display:block;cursor:crosshair}
+.pv{margin-top:12px;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:9px 11px;background:rgba(255,255,255,.03)}
+.pv h4{margin:0 0 6px;font-weight:400;color:var(--mut);font-size:13px}
+.sub{width:100%;margin-top:12px;padding:10px;font-size:14px}
+#toast{position:fixed;bottom:70px;right:50%;transform:translateX(50%);background:rgba(14,22,42,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-bottom:2px solid var(--green);font-weight:300;padding:8px 18px;border-radius:12px;z-index:20;display:none;max-width:90vw;font-size:14px}
+
+/* ---- participation section: slim glass panel inside the header, under the counter ---- */
+header{flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:12px}
+.tt{flex:none;align-self:flex-start;pointer-events:none}
+.acts{align-self:center;margin:0 auto;width:min(340px,100%);padding:9px 14px 12px;gap:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.14);align-items:stretch}
+.stat{display:block;font-size:12.5px;letter-spacing:.2px}
+.stat b{font-weight:400;font-size:14px}
+.stat::after{content:"";display:block;width:28px;height:1px;background:var(--red);margin:7px auto 8px}
+.btn.main{width:100%;background:transparent;border:1px solid rgba(255,255,255,.13);border-bottom-color:#16803C;border-radius:10px;padding:7px 12px;font:300 16px Tajawal,sans-serif;box-shadow:none}
+.btn.main:hover{background:rgba(255,255,255,.05);transform:none}
+#back{margin-top:8px;padding:6px 12px;font-size:13px;font-weight:300;background:transparent}
+#ov{position:static;inset:auto;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;margin-top:8px;max-height:min(46vh,380px);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+.modal{max-width:none;width:100%;margin:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;border-radius:0;box-shadow:none;padding:2px 2px 2px}
+.modal h2{display:none}
+.modal p.s{margin:0 0 2px;text-align:center;font-size:12px;line-height:1.6}
+.modal .x{top:-4px;left:-2px;font-size:20px;line-height:1}
+label{margin:9px 0 3px;font-size:12px;color:#c9d3e2}
+input,select{height:38px;padding:0 11px;border-radius:9px;font-size:16px}
+input,textarea,select{background:rgba(7,12,26,.42);border:1px solid rgba(255,255,255,.12)}
+textarea{padding:8px 11px;border-radius:9px;min-height:60px}
+#mini{aspect-ratio:2/1;border-radius:9px;background:rgba(7,12,26,.42);border:1px solid rgba(255,255,255,.12);margin-top:8px}
+.err{min-height:14px;font-size:12px;margin-top:2px}
+.pv{margin-top:10px;padding:8px 10px;border-radius:9px}
+.pv h4{font-size:11.5px;margin-bottom:4px}
+.pv .msg{font-size:15px;line-height:1.6;margin-bottom:6px}
+.sub{display:block;width:auto;min-width:150px;margin:12px auto 0;padding:7px 18px;font:300 15px Tajawal,sans-serif;border-bottom-color:#16803C}
+@media(max-width:700px){.acts{margin:0 auto}}
+
+/* ---- final: tiny share button, no instructional text ---- */
+.acts{width:fit-content;min-width:132px;max-width:100%;padding:6px 12px 8px}
+.stat{font-size:12px}
+.stat::after{margin:5px auto 6px}
+.btn.main{width:auto;align-self:center;position:relative;min-height:28px;padding:2px 16px;border-radius:8px;font:300 12.5px/1.6 Tajawal,sans-serif;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-bottom-color:rgba(22,128,60,.9);backdrop-filter:none}
+.btn.main::after{content:"";position:absolute;inset:-9px -6px}
+#ov{width:min(300px,calc(100vw - 56px))}
+.selp{min-height:16px;margin-top:6px;font-size:12px;font-weight:300;color:#c9d3e2;text-align:center}
+.sub{min-width:120px;padding:5px 16px;font-size:13px}
+#back{margin-top:6px;padding:3px 12px;font-size:12px;align-self:center}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<header>
+  <div class="tt"><small>نشاط وطني تفاعلي</small><h1>المــــادة الرابــــعة والثلاثـــــون</h1><p class="l2">بــالغـوا بالـدفـــاع عن وطــنكـم</p><div class="rule"></div><p class="l3"><i>السـعـوديـــه</i> <u>خــط أحــــمـــر</u></p></div>
+  <div class="acts">
+    <span class="stat"><b id="n">0</b> عبارة على الخريطة</span>
+    <button class="btn main" id="add">شارك بعبارتك</button>
+    <div id="ov">
+ <div class="modal">
+  <button class="x" id="cl" aria-label="إغلاق">×</button>
+    <label for="nm">الاسم</label><input id="nm" maxlength="40" placeholder="الاسم" autocomplete="off"><div class="err" id="e1"></div>
+  <label for="ms">العبارة الوطنية <span class="cnt"><span id="cc">0</span>/200</span></label>
+  <textarea id="ms" maxlength="200" placeholder="العبارة"></textarea><div class="err" id="e2"></div>
+  <label for="pl">الموقع</label><select id="pl"><option value="">اختر الموقع</option></select><div class="err" id="e3"></div>
+  <svg id="mini" viewBox="0 0 400 300" aria-label="اختر موقعاً داخل المملكة"></svg>
+  <div id="pp" class="selp"></div>
+  <div class="err" id="fe" role="alert" style="text-align:center"></div>
+  <button class="btn main sub" id="go">انشر عبارتك على الخريطة</button>
+ </div>
+</div>
+    <button class="btn" id="back">↩ العودة إلى خريطة العالم</button>
+  </div>
+</header>
+<div id="chips"></div>
+<div id="card"><button class="x" aria-label="إغلاق">×</button><p class="msg"></p><div class="who"><b></b><span></span></div></div>
+
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
+<script>
+/* ===== إعدادات Supabase — أدخل القيمتين هنا (انظر SUPABASE_SETUP.md) =====
+   SUPABASE_URL      : عنوان المشروع، مثل https://abcdxyz.supabase.co
+   SUPABASE_ANON_KEY : المفتاح العام (anon / publishable) فقط. لا تضع service_role هنا أبداً.
+   إذا تُركا فارغين يعمل الموقع بقاعدة البيانات المدمجة الحالية. */
+const SUPABASE_URL="";
+const SUPABASE_ANON_KEY="";
+let sb=null,total=null;
+const CITIES=[["الرياض",24.71,46.68],["جدة",21.54,39.17],["مكة المكرمة",21.39,39.86],["المدينة المنورة",24.47,39.61],["الدمام",26.43,50.10],["الخبر",26.28,50.21],["أبها",18.22,42.51],["تبوك",28.38,36.57],["حائل",27.52,41.70],["جازان",16.89,42.55],["نجران",17.49,44.13],["الأحساء",25.38,49.59],["الباحة",20.01,41.47],["الجوف (سكاكا)",29.97,40.21],["الحدود الشمالية (عرعر)",30.98,41.02],["القصيم (بريدة)",26.33,43.97],["الطائف",21.27,40.42],["ينبع",24.09,38.06],["الجبيل",27.01,49.66],["العلا",26.61,37.92],["حفر الباطن",28.43,45.96],["الخفجي",28.43,48.49],["شرورة",17.47,47.11],["القريات",31.33,37.34]];
+const $=id=>document.getElementById(id);
+let lastPost=0,map,svg,wrap,zoom,mk,cityG,sau,K=1,T=[0,0],W=innerWidth,H=innerHeight,mode="world",saudiK=3,msgs=[],db=null,loc=null,pj=null;
+const inSA=(a,b)=>isFinite(a)&&isFinite(b)&&a>15&&a<33&&b>33&&b<57;
+
+const I3="AFG:AF,AGO:AO,ALB:AL,ARE:AE,ARG:AR,ARM:AM,ATA:AQ,ATF:TF,AUS:AU,AUT:AT,AZE:AZ,BDI:BI,BEL:BE,BEN:BJ,BFA:BF,BGD:BD,BGR:BG,BHS:BS,BIH:BA,BLR:BY,BLZ:BZ,BOL:BO,BRA:BR,BRN:BN,BTN:BT,BWA:BW,CAF:CF,CAN:CA,CHE:CH,CHL:CL,CHN:CN,CIV:CI,CMR:CM,COD:CD,COG:CG,COL:CO,CRI:CR,CUB:CU,CYP:CY,CZE:CZ,DEU:DE,DJI:DJ,DNK:DK,DOM:DO,DZA:DZ,ECU:EC,EGY:EG,ERI:ER,ESP:ES,EST:EE,ETH:ET,FIN:FI,FJI:FJ,FLK:FK,FRA:FR,GAB:GA,GBR:GB,GEO:GE,GHA:GH,GIN:GN,GMB:GM,GNB:GW,GNQ:GQ,GRC:GR,GRL:GL,GTM:GT,GUF:GF,GUY:GY,HND:HN,HRV:HR,HTI:HT,HUN:HU,IDN:ID,IND:IN,IRL:IE,IRN:IR,IRQ:IQ,ISL:IS,ISR:IL,ITA:IT,JAM:JM,JOR:JO,JPN:JP,KAZ:KZ,KEN:KE,KGZ:KG,KHM:KH,KOR:KR,KWT:KW,LAO:LA,LBN:LB,LBR:LR,LBY:LY,LKA:LK,LSO:LS,LTU:LT,LUX:LU,LVA:LV,MAR:MA,MDA:MD,MDG:MG,MEX:MX,MKD:MK,MLI:ML,MMR:MM,MNE:ME,MNG:MN,MOZ:MZ,MRT:MR,MWI:MW,MYS:MY,NAM:NA,NCL:NC,NER:NE,NGA:NG,NIC:NI,NLD:NL,NOR:NO,NPL:NP,NZL:NZ,OMN:OM,PAK:PK,PAN:PA,PER:PE,PHL:PH,PNG:PG,POL:PL,PRI:PR,PRK:KP,PRT:PT,PRY:PY,PSE:PS,QAT:QA,ROU:RO,RUS:RU,RWA:RW,ESH:EH,SDN:SD,SSD:SS,SEN:SN,SLB:SB,SLE:SL,SLV:SV,SOM:SO,SRB:RS,SUR:SR,SVK:SK,SVN:SI,SWE:SE,SWZ:SZ,SYR:SY,TCD:TD,TGO:TG,THA:TH,TJK:TJ,TKM:TM,TLS:TL,TTO:TT,TUN:TN,TUR:TR,TWN:TW,TZA:TZ,UGA:UG,UKR:UA,URY:UY,USA:US,UZB:UZ,VEN:VE,VNM:VN,VUT:VU,YEM:YE,ZAF:ZA,ZMB:ZM,ZWE:ZW,KOS:XK".split(",").reduce((o,x)=>{const[a,b]=x.split(":");o[a]=b;return o},{});
+let DN=null;try{DN=new Intl.DisplayNames(["ar"],{type:"region"})}catch(e){}
+/* Country names shown in Arabic only; if a name is unavailable the tooltip is simply hidden (never English). */
+function arName(g){let n="";try{n=DN&&I3[g.id]?DN.of(I3[g.id]):""}catch(e){}return n||'<span style="display:none"></span>'}
+function boot(){map=new Datamap({element:$("map"),projection:"mercator",
+ fills:{defaultFill:"#101827",SAU:"#16803C"},
+ data:{SAU:{fillKey:"SAU",highlightFillColor:"#22c55e",highlightBorderColor:"#fff"}},
+ geographyConfig:{borderColor:"#2a3957",borderWidth:.5,highlightFillColor:"#1b2745",highlightBorderColor:"#5b6f9c",highlightBorderWidth:1,
+  popupTemplate:g=>'<div class="hoverinfo">'+(g.id==="SAU"?'المملكة العربية السعودية':arName(g))+'</div>'},
+ done:setup})}
+if(typeof d3==="undefined"||typeof topojson==="undefined"||typeof Datamap==="undefined"){fatal("تعذّر تحميل مكتبات الخريطة. تحقق من الاتصال ثم أعد تحميل الصفحة.")}
+else{try{boot()}catch(e){fatal("تعذّر رسم الخريطة: "+(e&&e.message),e)}}
+
+function fatal(m,e){console.error(m,e);const t=$("toast");t.textContent=m;t.style.display="block";t.style.borderColor="#d4262c"}
+/* ROOT CAUSE FIX: Datamaps calls done() synchronously inside its constructor, i.e. BEFORE `map=new Datamap(...)` has assigned. The old setup() used the global `map` and threw a TypeError at map.latLngToXY, aborting everything after it (city positions, chips, city dropdown options, marker drawing, database subscription). We now take the instance from the callback argument. */
+function setup(d){try{setup2(d)}catch(e){fatal("حدث خطأ في تهيئة الخريطة: "+(e&&e.message),e)}}
+function setup2(d){
+ map=d;
+ if(typeof map.latLngToXY!=="function"||!map.projection)throw new Error("Datamaps projection unavailable");
+ svg=d3.select(d.svg[0][0]);
+ const n=svg.node(),g=document.createElementNS(n.namespaceURI,"g");
+ while(n.firstChild)g.appendChild(n.firstChild);n.appendChild(g);wrap=d3.select(g);
+ const se=svg.select("path.SAU").node();sau=se?d3.select(se).datum():null;
+ if(!sau)throw new Error("Saudi Arabia polygon (path.SAU) not found in map data");
+ cityG=wrap.append("g").style("display","none");mk=wrap.append("g");
+ zoom=d3.behavior.zoom().scaleExtent([1,70]).on("zoom",()=>{K=d3.event.scale;T=d3.event.translate;wrap.attr("transform","translate("+T+")scale("+K+")");scale();window.geoScale&&geoScale();$("card").style.display="none"});
+ svg.call(zoom);
+ bindTap();
+ const cs=cityG.selectAll("g").data(CITIES).enter().append("g").attr("class","c");
+ cs.append("circle").attr("r",4.5);cs.append("text").attr("x",8).attr("y",4).text(c=>c[0].split(" ")[0]);
+ cs.each(c=>c._p=map.latLngToXY(c[1],c[2]));
+ scale();draw();
+ const ch=$("chips");CITIES.forEach(c=>{const b=document.createElement("button");b.textContent=c[0];b.onclick=()=>flyCity(c);ch.appendChild(b);const o=document.createElement("option");o.value=c[0];o.textContent=c[0];$("pl").appendChild(o)});
+startDb();window.mapReady=true;dispatchEvent(new Event("mapready"));
+}
+/* Tap handling is GEOMETRY-based (no reliance on e.target / closest() inside transformed SVG groups, which differs across Safari/iPad). We convert the pointer position to map coordinates using the current zoom state (K, T) and hit-test markers, cities and the Saudi polygon ourselves. */
+function onTap(el,fn,label){
+ let s=null,last=0;
+ const run=e=>{try{fn(e)}catch(x){fatal("\u062e\u0637\u0623 \u0641\u064a "+label+": "+x.message,x)}};
+ el.addEventListener("pointerdown",e=>{s={x:e.clientX,y:e.clientY,t:Date.now()}},true);
+ el.addEventListener("pointerup",e=>{if(!s)return;const m=Math.hypot(e.clientX-s.x,e.clientY-s.y),dt=Date.now()-s.t;s=null;if(m<8&&dt<700){last=Date.now();run(e)}},true);
+ el.addEventListener("click",e=>{if(Date.now()-last>700)run(e)},true);
+}
+function bindTap(){onTap($("map"),tap,"\u0627\u0644\u0646\u0642\u0631 \u0639\u0644\u0649 \u0627\u0644\u062e\u0631\u064a\u0637\u0629")}
+function inRing(r,x,y){let c=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
+function inFeat(f,x,y){const g=f.geometry||f,P=g.type==="Polygon"?[g.coordinates]:g.type==="MultiPolygon"?g.coordinates:[];return P.some(p=>inRing(p[0],x,y)&&!p.slice(1).some(h=>inRing(h,x,y)))}
+function inSau(x,y){return !!sau&&inFeat(sau,x,y)}
+function tap(e){
+ const r=svg.node().getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,sx=p=>p[0]*K+T[0],sy=p=>p[1]*K+T[1];
+ let best=null,bd=24;
+ mk.selectAll("g.m").each(function(d){const dd=Math.hypot(sx(d._p)-px,sy(d._p)-py);if(dd<bd){bd=dd;best=[d,this]}});
+ if(best){card(best[0],best[1]);return}
+ $("card").style.display="none";
+ if(mode==="saudi"){
+  const gh=window.geoHit&&geoHit(px,py);if(gh){openForm({lat:gh.lat,lng:gh.lng,place:gh.place,sel:""});return}
+  let c0=null,cd=22;CITIES.forEach(c=>{const dd=Math.hypot(sx(c._p)-px,sy(c._p)-py);if(dd<cd){cd=dd;c0=c}});
+  if(c0){openForm({lat:c0[1],lng:c0[2],place:c0[0],sel:c0[0]});return}
+ }
+ const ll=map.projection.invert([(px-T[0])/K,(py-T[1])/K]),hit=!!ll&&inSau(ll[0],ll[1]);
+ if(mode==="world"){
+  const q=d3.geo.path().projection(map.projection).centroid(sau);
+  if(hit||Math.hypot(sx(q)-px,sy(q)-py)<14)enter();
+  return;
+ }
+ if(hit)openForm({lat:ll[1],lng:ll[0],place:((window.geoRegion&&geoRegion(ll[0],ll[1]))||"")+"\u0642\u0631\u0628 "+nearest(ll[1],ll[0]),sel:""});
+}
+function scale(){
+ cityG.selectAll("g.c").attr("transform",c=>"translate("+c._p+")scale("+1/K+")");
+ mk.selectAll("g.m").attr("transform",d=>"translate("+d._p+")scale("+1/K+")");
+}
+function fly(x,y,k){svg.transition().duration(2400).ease("cubic-in-out").call(zoom.translate([W/2-x*k,H*.48-y*k]).scale(k).event)}
+function enter(){
+ mode="saudi";
+ const b=d3.geo.path().projection(map.projection).bounds(sau),dx=b[1][0]-b[0][0],dy=b[1][1]-b[0][1];
+ saudiK=Math.min(60,.78/Math.max(dx/W,dy/(H*.8)));
+ cityG.style("display",null).style("opacity",0).transition().delay(1400).duration(1000).style("opacity",1);
+ fly((b[0][0]+b[1][0])/2,(b[0][1]+b[1][1])/2,saudiK);
+ $("back").style.display="";window.geoShow&&geoShow(true);$("chips").style.display="flex";
+}
+function world(){
+ mode="world";$("card").style.display="none";
+ svg.transition().duration(2000).ease("cubic-in-out").call(zoom.translate([0,0]).scale(1).event);
+ cityG.transition().duration(500).style("opacity",0).each("end",()=>cityG.style("display","none"));
+ window.geoShow&&geoShow(false);$("back").style.display="none";$("chips").style.display="none";
+}
+function flyCity(c){const p=c._p||map.latLngToXY(c[1],c[2]);if(mode==="world"){mode="saudi";window.geoShow&&geoShow(true);cityG.style("display",null).style("opacity",1);$("back").style.display="";$("chips").style.display="flex"}fly(p[0],p[1],Math.min(70,saudiK*3.4))}
+$("back").onclick=world;
+
+function draw(){
+ const ok=msgs.filter(m=>inSA(m.lat,m.lng));
+ const s=mk.selectAll("g.m").data(ok,d=>d.id);
+ const e=s.enter().append("g").attr("class","m");
+ e.append("circle").attr("class","pulse").attr("r",8);e.append("circle").attr("class","dot").attr("r",5.5);
+ s.exit().remove();s.each(d=>d._p=map.latLngToXY(d.lat,d.lng));scale();$("n").textContent=(total!=null&&total>=ok.length)?total:ok.length;
+}
+function card(d,node){
+ if(!node)mk.selectAll("g.m").each(function(x){if(x.id===d.id)node=this});if(!node)return;
+ const c=$("card"),r=node.getBoundingClientRect();
+ c.querySelector(".msg").textContent=d.msg;c.querySelector("b").textContent=d.name;c.querySelector(".who span").textContent="📍 "+d.place;
+ c.style.display="block";c.style.left=Math.min(W-150,Math.max(150,r.left+r.width/2))+"px";c.style.top=Math.max(190,r.top)+"px";
+}
+document.querySelector("#card .x").onclick=()=>$("card").style.display="none";
+
+async function startSupabase(){
+ if(!window.supabase)await new Promise((ok,no)=>{const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";e.onload=ok;e.onerror=()=>no(new Error("supabase-js failed to load"));document.head.appendChild(e)});
+ sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+ const norm=r=>({id:r.id,name:String(r.name||"").slice(0,40),msg:String(r.message||"").slice(0,200),place:String(r.place||"").slice(0,80),lat:+r.lat,lng:+r.lng});
+ const load=async()=>{
+  const [a,c]=await Promise.all([sb.from("national_messages").select("id,name,message,place,lat,lng,created_at").order("created_at",{ascending:false}).limit(500),sb.from("national_messages").select("id",{count:"exact",head:true})]);
+  if(a.error)throw a.error;
+  msgs=a.data.map(norm);total=c.error?null:c.count;draw();
+ };
+ await load();
+ sb.channel("national_messages_live").on("postgres_changes",{event:"*",schema:"public",table:"national_messages"},p=>{
+  if(p.eventType==="INSERT"){const m=norm(p.new);if(!msgs.some(x=>x.id===m.id)){msgs.push(m);if(total!=null)total++;draw()}}
+  else load().catch(e=>console.error("supabase reload",e));
+ }).subscribe();
+ setInterval(()=>load().catch(e=>console.error("supabase poll",e)),60000);
+}
+async function startDb(){
+ if(SUPABASE_URL&&SUPABASE_ANON_KEY){try{await startSupabase();return}catch(e){sb=null;console.error("Supabase connection failed",e);toast("تعذّر الاتصال بقاعدة البيانات السحابية.")}}
+ try{
+  db=await claude.use("db");
+  if(db)db.collection("messages").limit(500).onSnapshot(sn=>{msgs=sn.docs.map(x=>{const v=x.data()||{};return{id:x.id,name:String(v.name||"").slice(0,40),msg:String(v.msg||"").slice(0,200),place:String(v.place||"").slice(0,60),lat:+v.lat,lng:+v.lng}}).filter(m=>m.name&&m.msg);draw()},()=>{});
+ }catch(e){db=null}
+}
+function toast(t,ms){const e=$("toast");e.textContent=t;e.style.borderColor="";e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",ms||4500)}
+
+/* ---------- form ---------- */
+function nearest(a,b){let m=1e9,r="";CITIES.forEach(c=>{const d=(c[1]-a)**2+(c[2]-b)**2;if(d<m){m=d;r=c[0].split(" ")[0]}});return r}
+function pv(){$("pp").textContent=loc?"📍 "+loc.place:"";$("cc").textContent=$("ms").value.length}
+function mini(){
+ const s=d3.select("#mini");s.selectAll("*").remove();
+ const w=400,h=300,p=d3.geo.mercator().scale(1).translate([0,0]),pa=d3.geo.path().projection(p),b=pa.bounds(sau),sc=.92/Math.max((b[1][0]-b[0][0])/w,(b[1][1]-b[0][1])/h);
+ p.scale(sc).translate([(w-sc*(b[1][0]+b[0][0]))/2,(h-sc*(b[1][1]+b[0][1]))/2]);pj=p;
+ s.append("path").datum(sau).attr("d",d3.geo.path().projection(p)).attr("fill","#16803C").attr("stroke","#4ade80").attr("stroke-width",1);
+ s.selectAll("circle.k").data(CITIES).enter().append("circle").attr("r",4).attr("fill","#f8d66d").attr("stroke","#101827").attr("cx",c=>p([c[2],c[1]])[0]).attr("cy",c=>p([c[2],c[1]])[1]).style("cursor","pointer").append("title").text(c=>c[0]);
+ s.append("g").attr("id","pin");pin();
+}
+function miniTap(e){
+ if(!pj||!sau){$("e3").textContent="\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u062e\u0631\u064a\u0637\u0629 \u0627\u0644\u0645\u0645\u0644\u0643\u0629\u060c \u0627\u062e\u062a\u0631 \u0645\u0646 \u0627\u0644\u0642\u0627\u0626\u0645\u0629.";return}
+ const sv=$("mini"),pt=sv.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(sv.getScreenCTM().inverse());
+ let c0=null,cd=14;CITIES.forEach(c=>{const p=pj([c[2],c[1]]),d=Math.hypot(p[0]-q.x,p[1]-q.y);if(d<cd){cd=d;c0=c}});
+ if(c0){setLoc(c0[1],c0[2],c0[0],c0[0]);return}
+ const ll=pj.invert([q.x,q.y]);
+ if(ll&&inSau(ll[0],ll[1]))setLoc(ll[1],ll[0],"\u0642\u0631\u0628 "+nearest(ll[1],ll[0]),"");
+ else $("e3").textContent="\u0627\u0646\u0642\u0631 \u062f\u0627\u062e\u0644 \u062d\u062f\u0648\u062f \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0639\u0644\u0649 \u0627\u0644\u062e\u0631\u064a\u0637\u0629.";
+}
+onTap($("mini"),miniTap,"\u0627\u0644\u062e\u0631\u064a\u0637\u0629 \u0627\u0644\u0645\u0635\u063a\u0651\u0631\u0629");
+function pin(){const g=d3.select("#pin");if(!g.node())return;g.selectAll("*").remove();if(!loc||!pj)return;const q=pj([loc.lng,loc.lat]);g.append("circle").attr("cx",q[0]).attr("cy",q[1]).attr("r",8).attr("fill","#d4262c").attr("stroke","#fff").attr("stroke-width",2).style("pointer-events","none")}
+function setLoc(a,b,place,sel){loc={lat:a,lng:b,place};$("pl").value=sel;$("e3").textContent="";pin();pv()}
+$("pl").onchange=function(){const c=CITIES.find(x=>x[0]===this.value);if(c)setLoc(c[1],c[2],c[0],c[0]);else{loc=null;pin();pv()}};
+["nm","ms"].forEach(i=>$(i).addEventListener("input",()=>{$("e1").textContent=$("e2").textContent="";pv()}));
+function openForm(l){window.oa=Date.now();$("ov").style.display="block";try{mini()}catch(e){console.error("mini map failed",e)}if(l)setLoc(l.lat,l.lng,l.place,l.sel||"");pv();if(matchMedia("(pointer:fine)").matches)setTimeout(()=>{try{$("nm").focus({preventScroll:true})}catch(e){}},80)}
+$("add").onclick=()=>{$("ov").style.display==="block"?closeForm(false):openForm()};
+function closeForm(reset){$("ov").style.display="none";if(reset){$("nm").value="";$("ms").value="";$("pl").value="";$("fe").textContent="";$("e1").textContent=$("e2").textContent=$("e3").textContent="";loc=null;try{pin();pv()}catch(e){console.error(e)}}}
+$("cl").onclick=()=>closeForm(false);
+addEventListener("keydown",e=>{if(e.key==="Escape"&&$("ov").style.display==="block")closeForm(false)});
+$("ov").addEventListener("mousedown",e=>{if(e.target===$("ov")&&Date.now()-(window.oa||0)>800)$("ov").style.display="none"});
+
+$("go").onclick=async()=>{
+ const name=$("nm").value.trim(),msg=$("ms").value.trim();let ok=true;
+ $("e1").textContent=$("e2").textContent=$("e3").textContent="";
+ if(name.length<2){$("e1").textContent="يرجى كتابة اسمك (حرفان على الأقل).";ok=false}
+ if(!msg){$("e2").textContent="يرجى كتابة عبارتك الوطنية.";ok=false}
+ else if(msg.length<5){$("e2").textContent="العبارة قصيرة جداً، اكتب 5 أحرف على الأقل.";ok=false}
+ else if(msg.length>200){$("e2").textContent="العبارة تتجاوز 200 حرف.";ok=false}
+ if(!loc||!inSA(loc.lat,loc.lng)){$("e3").textContent="اختر موقعاً داخل المملكة من القائمة أو بالنقر على الخريطة.";ok=false}
+ if(!ok)return;
+ if(Date.now()-lastPost<20000){toast("يرجى الانتظار قليلاً قبل نشر عبارة أخرى.");return}
+ const rec={name:name.slice(0,40),msg,place:loc.place,lat:+loc.lat.toFixed(4),lng:+loc.lng.toFixed(4),t:Date.now()};
+ $("go").disabled=true;$("go").textContent="جارٍ الحفظ…";$("fe").textContent="";let id=null;
+ const lim=new Promise((_,no)=>setTimeout(()=>no(new Error("انتهت مهلة الاتصال")),15000));
+ try{
+  if(sb){const q=await Promise.race([sb.from("national_messages").insert({name:rec.name,message:rec.msg,place:rec.place,lat:rec.lat,lng:rec.lng}).select("id").single(),lim]);if(q.error)throw q.error;id=q.data.id;if(!msgs.some(x=>x.id===id)){msgs.push({id,...rec});if(total!=null)total++;draw()}}
+  else if(db){const r=await Promise.race([db.collection("messages").add(rec),lim]);id=r.id}
+  else throw new Error("الحفظ المشترك غير متاح حالياً (يلزم تسجيل الدخول أو إعداد قاعدة البيانات)");
+ }catch(e){
+  console.error("save failed",e);const c=e&&e.code;
+  $("fe").textContent=(c==="permission_denied"||c==="not_granted"||c==="forbidden"?"ليس لديك صلاحية الحفظ في قاعدة البيانات المشتركة.":"تعذّر الحفظ: "+((e&&(e.message||e.code))||"خطأ غير معروف"))+" — بياناتك محفوظة في النموذج، حاول مرة أخرى.";
+  $("go").disabled=false;$("go").textContent="انشر عبارتك على الخريطة";return;
+ }
+ /* saved for real: now close the form, reset it and show the result */
+ lastPost=Date.now();closeForm(true);
+ $("go").disabled=false;$("go").textContent="انشر عبارتك على الخريطة";
+ toast("تمت إضافة عبارتك بنجاح",3200);
+ try{
+  if(mode==="world")enter();
+  const p=map.latLngToXY(rec.lat,rec.lng);setTimeout(()=>fly(p[0],p[1],Math.min(70,saudiK*4)),mode==="saudi"?600:2500);
+  setTimeout(()=>{const m=msgs.find(x=>x.id===id);if(m)card(m)},5200);
+ }catch(e){console.error("post-save map animation",e)}
+};
+addEventListener("resize",()=>{W=innerWidth;H=innerHeight});
+</script>
+<script type="module">
+/* Real open geodata: "saudi-national-address" (data CC0-1.0, code MIT): 13 region polygons + 4,581 cities with Arabic names. Loaded at runtime from jsDelivr (pinned version). If it cannot load, the page keeps its basic mode and says so. */
+const B="https://cdn.jsdelivr.net/npm/saudi-national-address@1.1.0/";
+let rg,rl,cg,cities=[],regs=[],shown=false,raf=0,vis=[];
+const pairs=a=>Array.isArray(a)&&a.length>2&&a.every(p=>Array.isArray(p)&&p.length>=2&&typeof p[0]==="number");
+const rings=(x,o=[])=>{if(pairs(x))o.push(x);else if(Array.isArray(x))x.forEach(y=>rings(y,o));return o};
+const ll=p=>(p[0]>14&&p[0]<34&&p[1]>33)?[p[1],p[0]]:[p[0],p[1]];
+const cxy=c=>{const k=c.center||c;if(Array.isArray(k))return ll(k);const a=k.lat??k.latitude,o=k.lng??k.lon??k.longitude;return typeof a==="number"&&typeof o==="number"?[o,a]:null};
+const rn=n=>"منطقة "+String(n).replace(/^منطقة\s*/,"");
+async function go(){
+ try{
+  const imp=async u=>{try{return await import(u)}catch(e){console.warn("geo import failed",u,e);return null}};
+  const [F,L]=await Promise.all([imp(B+"full/+esm"),imp(B+"+esm")]);
+  const pick=n=>{for(const m of [F,L])if(m&&(m[n]||(m.default&&m.default[n])))return m[n]||m.default[n]};
+  const R=pick("regionsFull"),C=pick("cities")||[];
+  if(!R||!R.length)throw new Error("regionsFull not found (full module loaded: "+!!F+", main module loaded: "+!!L+")");
+  build(R,C);
+ }catch(e){console.error("geo data failed",e)}
+}
+function build(R,C){
+ const P=map.projection;
+ regs=R.map(r=>{const rs=rings(r.boundaries||r.boundary||r.geometry||r.polygon).map(a=>a.map(ll));const c=cxy(r)||(rs[0]&&rs[0][0]);return{id:r.region_id,name:rn(r.name_ar||r.name_en),rings:rs,c}}).filter(r=>r.rings.length&&r.c);
+ if(!regs.length)throw new Error("no region geometry");
+ const nm={};regs.forEach(r=>nm[r.id]=r.name);
+ rg=wrap.insert("g",()=>cityG.node()).style("display","none");
+ rl=wrap.insert("g",()=>mk.node()).style("display","none");
+ cg=wrap.insert("g",()=>mk.node()).style("display","none");
+ regs.forEach(r=>{rg.append("path").attr("class","rg").attr("d",r.rings.map(a=>"M"+a.map(p=>P(p).join(",")).join("L")+"Z").join(""));r.p=P(r.c);
+  rl.append("g").attr("class","l").datum(r).append("text").attr("class","rn").text(r.name)});
+ const maj=new Set(CITIES.map(c=>c[0].split(" ")[0]));
+ cities=C.map(c=>({id:c.city_id,n:c.name_ar||c.name_en,rid:c.region_id,xy:cxy(c)})).filter(c=>c.n&&c.xy&&inSA(c.xy[1],c.xy[0]));
+ cities.forEach(c=>{c.p=P(c.xy);c.pr=maj.has(c.n)?0:1;c.reg=nm[c.rid]||""});
+ cities.sort((a,b)=>a.pr-b.pr||a.id-b.id);
+ if(cities.length)cityG.classed("geo",true);
+ shown=(mode==="saudi");apply();
+}
+function apply(){if(!rg)return;[rg,rl,cg].forEach(g=>g.style("display",shown?null:"none"));lab();cityRender()}
+function lab(){
+ if(!rg)return;
+ rl.selectAll("g.l").attr("transform",d=>"translate("+d.p+")scale("+1/K+")");
+ rl.style("display",shown&&K<saudiK*3.4?null:"none");
+ cg.selectAll("g.g").attr("transform",d=>"translate("+d.p+")scale("+1/K+")");
+}
+function cityRender(){
+ if(!rg)return;
+ if(!shown||K<saudiK*1.5){cg.selectAll("*").remove();vis=[];return}
+ const maxPr=K>=saudiK*3.2?1:0,cell=64/K,x0=-T[0]/K,x1=(W-T[0])/K,y0=-T[1]/K,y1=(H-T[1])/K,used=new Set(),out=[];
+ for(const c of cities){if(c.pr>maxPr)break;const x=c.p[0],y=c.p[1];if(x<x0||x>x1||y<y0||y>y1)continue;const k=Math.floor(x/cell)+"_"+Math.floor(y/cell);if(used.has(k))continue;used.add(k);out.push(c);if(out.length>=140)break}
+ vis=out;
+ const s=cg.selectAll("g.g").data(out,d=>d.id),e=s.enter().append("g").attr("class","g");
+ e.append("circle").attr("r",3.2);e.append("text").attr("x",6).attr("y",4).text(d=>d.n);
+ s.exit().remove();
+ cg.selectAll("g.g").attr("transform",d=>"translate("+d.p+")scale("+1/K+")");
+ cg.selectAll("g.g text").style("display",d=>(d.pr===0||K>=saudiK*5)?null:"none");
+}
+window.geoShow=v=>{shown=v;apply()};
+window.geoScale=()=>{if(!rg)return;lab();if(!raf)raf=requestAnimationFrame(()=>{raf=0;cityRender()})};
+window.geoHit=(px,py)=>{let b=null,bd=20;vis.forEach(c=>{const d=Math.hypot(c.p[0]*K+T[0]-px,c.p[1]*K+T[1]-py);if(d<bd){bd=d;b=c}});return b?{lat:b.xy[1],lng:b.xy[0],place:(b.reg?b.reg+" · ":"")+b.n}:null};
+window.geoRegion=(x,y)=>{const r=regs.find(r=>r.rings.some(a=>inRing(a,x,y)));return r?r.name+" · ":""};
+if(window.mapReady)go();else addEventListener("mapready",go,{once:true});
+</script>
+</body>
+</html>
